@@ -10,6 +10,7 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -18,6 +19,10 @@ class UserResource extends Resource
     protected static ?string $model = User::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-users';
+
+    protected static ?string $modelLabel = 'Usuários';
+
+    protected static ?string $slug = 'usuario';
 
     public static function form(Form $form): Form
     {
@@ -30,15 +35,24 @@ class UserResource extends Resource
                 Forms\Components\TextInput::make('email')
                     ->email()
                     ->required()
+                    ->unique(ignoreRecord: true)
                     ->maxLength(255)
                     ->label("Email"),
                 Forms\Components\DateTimePicker::make('email_verified_at')
                     ->label("Email verificado em"),
                 Forms\Components\TextInput::make('password')
                     ->password()
-                    ->required()
+                    ->dehydrateStateUsing(fn (string $state): string => Hash::make($state))
+                    ->dehydrated(fn (?string $state): bool => filled($state))
+                    ->required(fn (string $operation): bool => $operation === 'create')
                     ->maxLength(255)
                     ->label("Senha"),
+                Forms\Components\Select::make('roles')
+                    ->multiple()
+                    ->relationship('roles', 'name', fn(Builder $query)=>
+                    auth()->user()->hasRole('Admin') ? null : $query->where("name", "!=", "Admin")
+                    )
+                    ->preload(),
             ]);
     }
 
@@ -94,5 +108,14 @@ class UserResource extends Resource
             'create' => Pages\CreateUser::route('/create'),
             'edit' => Pages\EditUser::route('/{record}/edit'),
         ];
-    }    
+    }
+    public static function getEloquentQuery(): Builder
+    {
+        return auth()->user()->hasRole("Admin") 
+        ? parent::getEloquentQuery()
+        : parent::getEloquentQuery()->whereHas(
+            "roles", fn(Builder $query) => $query->where("name", "!=", "Admin")
+        );
+    }
+    
 }

@@ -19,12 +19,19 @@ class PublicacaoResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-document-chart-bar';
 
+    protected static ?string $modelLabel = 'Publicação';
+
+    protected static ?string $pluralModelLabel = 'Publicações';
+
+    protected static ?string $slug = 'publicacao';
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\DatePicker::make('publicacao')
                     ->required()
+                    ->label("Publicação")
                     ->maxDate(now()),
                 Forms\Components\Select::make('categoria')
                     ->options([
@@ -50,6 +57,7 @@ class PublicacaoResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('publicacao')
                     ->dateTime("d/m/Y H:i:s")
+                    ->label("Publicação")
                     ->sortable(),
                 Tables\Columns\TextColumn::make('categoria')
                     ->searchable(),
