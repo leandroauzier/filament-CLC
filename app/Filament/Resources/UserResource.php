@@ -28,32 +28,40 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
-                    ->required()
-                    ->maxLength(255)
-                    ->label("Nome"),
-                Forms\Components\TextInput::make('email')
-                    ->email()
-                    ->required()
-                    ->unique(ignoreRecord: true)
-                    ->maxLength(255)
-                    ->label("Email"),
-                Forms\Components\DateTimePicker::make('email_verified_at')
-                    ->label("Email verificado em"),
-                Forms\Components\TextInput::make('password')
-                    ->password()
-                    ->dehydrateStateUsing(fn (string $state): string => Hash::make($state))
-                    ->dehydrated(fn (?string $state): bool => filled($state))
-                    ->required(fn (string $operation): bool => $operation === 'create')
-                    ->maxLength(255)
-                    ->label("Senha"),
-                Forms\Components\Select::make('roles')
-                    ->multiple()
-                    ->relationship('roles', 'name', fn(Builder $query)=>
-                    auth()->user()->hasRole('Admin') ? null : $query->where("name", "!=", "Admin")
-                    )
-                    ->preload(),
+                Forms\Components\Group::make()
+                    ->schema([
+                        Forms\Components\Section::make()
+                            ->schema([
+                            Forms\Components\TextInput::make('name')
+                                ->required()
+                                ->maxLength(255)
+                                ->label("Nome"),
+                            Forms\Components\TextInput::make('email')
+                                ->email()
+                                ->required()
+                                ->unique(ignoreRecord: true)
+                                ->maxLength(255)
+                                ->label("Email"),
+                            Forms\Components\DateTimePicker::make('email_verified_at')
+                                ->label("Email verificado em"),
+                            Forms\Components\TextInput::make('password')
+                                ->password()
+                                ->dehydrateStateUsing(fn (string $state): string => Hash::make($state))
+                                ->dehydrated(fn (?string $state): bool => filled($state))
+                                ->required(fn (string $operation): bool => $operation === 'create')
+                                ->maxLength(255)
+                                ->label("Senha"),
+                            Forms\Components\Select::make('roles')
+                                ->multiple()
+                                ->label("Função")
+                                ->relationship('roles', 'name', fn(Builder $query)=>
+                                auth()->user()->hasRole('Admin') ? null : $query->where("name", "!=", "Admin")
+                                )
+                                ->preload(),
+                        ])->columns(2),        
+                    ])
             ]);
+                
     }
 
     public static function table(Table $table): Table

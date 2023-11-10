@@ -29,25 +29,32 @@ class PublicacaoResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\DatePicker::make('publicacao')
-                    ->required()
-                    ->label("Publicação")
-                    ->maxDate(now()),
-                Forms\Components\Select::make('categoria')
-                    ->options([
-                        'certidao' => 'Certidão',
-                        'organograma' => 'Organograma',
-                        'outro' => 'Outro',
+                Forms\Components\Group::make()
+                    ->schema([
+                        Forms\Components\Section::make()
+                            ->schema([
+                                Forms\Components\TextInput::make('titulo')
+                                    ->required()
+                                    ->maxLength(255),
+                                Forms\Components\DatePicker::make('publicacao')
+                                    ->required()
+                                    ->label("Publicação")
+                                    ->maxDate(now()),
+                                Forms\Components\Select::make('categoria')
+                                    ->options([
+                                        'certidao' => 'Certidão',
+                                        'organograma' => 'Organograma',
+                                        'outro' => 'Outro',
+                                    ])
+                                    ->required(),
+                                Forms\Components\FileUpload::make('arquivo')
+                                    ->required()
+                                    ->preserveFilenames()
+                                    ->acceptedFileTypes(['application/pdf']),
+                                Forms\Components\Toggle::make('ativo')
+                                    ->columnSpan('full')
+                            ])->columns(1),
                     ])
-                    ->required(),
-                Forms\Components\TextInput::make('titulo')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\FileUpload::make('arquivo')
-                    ->required()
-                    ->preserveFilenames()
-                    ->acceptedFileTypes(['application/pdf']),
-                Forms\Components\Toggle::make('ativo')
             ]);
     }
 
