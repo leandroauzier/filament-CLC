@@ -14,12 +14,13 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\FileUpload;
+use Illuminate\Support\Facades\Redirect;
 
 class ArquivoResource extends Resource
 {
     protected static ?string $model = Arquivo::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-archive-box';
 
     protected static ?string $navigationGroup = 'Acervo';
 

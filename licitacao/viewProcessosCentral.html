@@ -1,0 +1,422 @@
+
+<!-- saved from url=(0078)http://192.168.252.136:8080/slideshowdashboard/integracao/viewProcessosCentral -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Central de Requisitos - Kanban</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="./viewProcessosCentral_files/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="./viewProcessosCentral_files/sb-admin.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="./viewProcessosCentral_files/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+	<script src="./viewProcessosCentral_files/Chart.Core.js"></script>
+	<script src="./viewProcessosCentral_files/Chart.Doughnut.js"></script>
+	<style>
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		#canvas-holder{
+			width:50%;
+		}
+    .c3-chart-arc text {
+      fill:#fff;
+      font-size:20px;
+    }
+    text{
+      font-size:15px;
+    }
+    #chart{
+      width:900px;
+      height:490px;
+    }
+    .page-body{
+        padding: 10px;
+    }
+    .painel-left{
+      background-color: #00994C;  
+      border-radius: 15px 15px 0px 0px;
+      min-height: 70px;
+    }
+    .text-panel-left{
+      color: white;
+      text-align: center;
+      font-size: 20px;
+    }
+    .text-panel-left-number{
+      color: #00994C;
+      text-align: center;
+      font-size: 90px;
+      font-weight: bold;
+    }
+    .text-panel-left-int-nome{
+      color: #00994C;
+      font-size: 20px;
+      font-weight: bold;
+      vertical-align: top;
+      width: 80%;
+    }
+    .text-panel-left-int-qtd{
+      color: #00994C;
+      font-size: 20px;
+      font-weight: bold;
+      vertical-align: top;
+    }
+    .body-panel{
+      height:80%;
+      background-color:#f5f5f5;
+    }
+    .painel-table{
+      background-color: #00994C;  
+      border-radius: 15px 15px 0px 0px;
+      min-height: 70px;
+    }
+    .text-table{
+      color: white;
+      text-align: center;
+      font-size: 18px;
+    }
+	</style>
+
+	<script type="text/javascript" src="./viewProcessosCentral_files/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined variable: projetos</p>
+<p>Filename: _inc/topo.php</p>
+<p>Line Number: 94</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\SlideShow\xampp\htdocs\slideshowdashboard\application\views\_inc\topo.php<br />
+			Line: 94<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\SlideShow\xampp\htdocs\slideshowdashboard\application\views\processosCentral.php<br />
+			Line: 2<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\SlideShow\xampp\htdocs\slideshowdashboard\application\controllers\Integracao.php<br />
+			Line: 187<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\SlideShow\xampp\htdocs\slideshowdashboard\index.php<br />
+			Line: 292<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Warning</p>
+<p>Message:  Invalid argument supplied for foreach()</p>
+<p>Filename: _inc/topo.php</p>
+<p>Line Number: 94</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\SlideShow\xampp\htdocs\slideshowdashboard\application\views\_inc\topo.php<br />
+			Line: 94<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\SlideShow\xampp\htdocs\slideshowdashboard\application\views\processosCentral.php<br />
+			Line: 2<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\SlideShow\xampp\htdocs\slideshowdashboard\application\controllers\Integracao.php<br />
+			Line: 187<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\SlideShow\xampp\htdocs\slideshowdashboard\index.php<br />
+			Line: 292<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>      }
+    </script>
+
+<script type="text/javascript" src="./viewProcessosCentral_files/app_plus.js"></script></head>
+
+           
+     
+    
+
+    <body><div id="page-wrapper" class="page-body">	
+        
+<style>
+.div-topo{
+  background-color: #00994C;  
+  border-radius: 15px;
+  margin-top: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  width: 98%;
+  min-height: 120px;
+}
+.img-topo{
+  height:100px;
+  margin: 10px;
+}
+.img-topo-right{
+  height:100px;
+  margin: 10px;
+  float:right;
+}
+.text-topo{
+  color: white;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 40px;
+}
+</style>
+        <div class="row">
+                    <div class="col-lg-4 col-md-8">
+                        <div class="panel panel-success body-panel">
+                            <div class="painel-left">
+    							<div class="row">
+    								<div class="col-xs-12 text-center">
+    									<h3 class="text-panel-left">Total de Processos Finalizados pela Central</h3>
+    								</div>	
+    							</div>
+                            </div>
+                            <!--<a href="http://192.168.252.136:8080/slideshowdashboard/integracao/viewProcessosCentral#">-->
+                            <a href="http://192.168.252.15/licitapregao/viewProcessosCentral.html">
+                                <div class="panel-footer panel-success" style="height: 65%;">
+                                    <div class="row">
+                                        <div class="col-xs-10 text-right">
+                                            <div class="text-panel-left-number">15</div>
+                                        </div>
+                                    </div>
+                                                                            <h3><span class="pull-left text-panel-left-int-nome">PREGÃO ELETRÔNICO</span></h3>
+                                        <h3><span class="pull-right text-panel-left-int-qtd">15</span></h3>
+                                        <div class="clearfix"></div>
+                                                                    </div>
+                            </a>
+                        </div>
+                    </div>
+                
+    				    			
+                    <!--Grafico-->
+                    <div class="col-lg-8"> 
+                        <div class="panel panel-success body-panel">
+                            <div class="painel-left">
+                                <div class="row">
+                                    <div class="col-xs-12 text-center">
+                                        <h3 class="text-panel-left"><i class="fa fa-fw fa-bar-chart-o"></i> Visão detalhada dos últimos Processos
+                                            <i class="fa fa-circle-o-notch fa-spin fa-1x fa-fw margin-bottom"></i>                                          
+                                        </h3>
+                                    </div>  
+                                </div>
+  
+                            </div>
+                            <div class="panel-body">
+                                <table class="table table-striped">
+                                    <thead class="painel-table">
+                                      <tr class="text-table">
+                                        <th class="text-table">Nº Processo</th>
+                                        <th class="text-table">Órgão</th>
+                                        <th class="text-table">Objeto</th>
+                                        <th class="text-table">Modalidade</th>
+                                        <th class="text-table">Dt Autor. Compra</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                     		                                      <tr>
+	                                        <td>00004/PM/2016</td>
+	                                        <td>PM</td>
+	                                        <td>AQUISIÇÃO DE MATERIAL DE EXPEDIENTE VISANDO ATENDER AS NECESSIDADES DA POLÍCIA MILITAR DO ESTADO DO </td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>10/04/2017</td>
+	                                      </tr>
+                                     		                                      <tr>
+	                                        <td>00004/PGE/2016</td>
+	                                        <td>PGE</td>
+	                                        <td>AQUISIÇÃO DE SUPRIMENTOS DE INFORMÁTICA</td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>10/04/2017</td>
+	                                      </tr>
+                                     		                                      <tr>
+	                                        <td>00006/PM/2016</td>
+	                                        <td>PM</td>
+	                                        <td>AQUISIÇÃO DE ÓLEO PARA MOTOR VISANDO ATENDER AS NECESSIDADES DA FROTA DE VEÍCULOS DA POLÍCIA MILITAR</td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>04/04/2017</td>
+	                                      </tr>
+                                     		                                      <tr>
+	                                        <td>00005/PM/2016</td>
+	                                        <td>PM</td>
+	                                        <td>AQUISIÇÃO DE UNIFORMES, VISANDO ATENDER AS NECESSIDADES DOS PROGRAMAS SOCIAIS DESENVOLVIDOS PELA DIR</td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>04/04/2017</td>
+	                                      </tr>
+                                     		                                      <tr>
+	                                        <td>00007/PM/2016</td>
+	                                        <td>PM</td>
+	                                        <td>CONTRATAÇÃO DE SERVIÇOS PARA O SISTEMA DE RADIOCOMUNICAÇÃO DA PMAP
+
+</td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>21/03/2017</td>
+	                                      </tr>
+<!--                                     		                                      <tr>
+	                                        <td>00002/PRODAP/2016</td>
+	                                        <td>PRODAP</td>
+	                                        <td>A contratação da prestação de serviços de empresa de desenvolvimento de sistemas, com habilidade na </td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>21/03/2017</td>
+	                                      </tr>-->
+<!--                                     		                                      <tr>
+	                                        <td>00002/PM/2016</td>
+	                                        <td>PM</td>
+	                                        <td>AQUISIÇÃO DE FILTROS DE ÓLEO E DE SEPARADOR DE ÁGUA  PARA ATENDER AS NECESSIDADES DA FROTA DE VEÍCUL</td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>17/02/2017</td>
+	                                      </tr>
+                                     		                                      <tr>
+	                                        <td>00001/PM/2016</td>
+	                                        <td>PM</td>
+	                                        <td>AQUISIÇÃO DE FILTROS DE COMBUSTÍVEL E DE AR PARA ATENDER AS NECESSIDADES DA FROTA DE VEÍCULOS DA POL</td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>14/02/2017</td>
+	                                      </tr>
+                                     		                                      <tr>
+	                                        <td>00006/PGE/2016</td>
+	                                        <td>PGE</td>
+	                                        <td>CONTRATAÇÃO DE SERVIÇOS DE AGENCIAMENTO DE VIAGENS PARA ATENDER AS NECESSIDADES DE LOCOMOÇÃO DOS SER</td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>07/02/2017</td>
+	                                      </tr>
+                                     		                                      <tr>
+	                                        <td>00002/PGE/2016</td>
+	                                        <td>PGE</td>
+	                                        <td>Aquisição de Material de Expediente</td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>07/02/2017</td>
+	                                      </tr>
+                                     		                                      <tr>
+	                                        <td>00003/PGE/2016</td>
+	                                        <td>PGE</td>
+	                                        <td>AQUISIÇÃO DE GÊNEROS ALIMENTÍCIOS</td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>03/02/2017</td>
+	                                      </tr>-->
+<!--                                     		                                      <tr>
+	                                        <td>00001/PGE/2016</td>
+	                                        <td>PGE</td>
+	                                        <td>Prestação de Serviços de provimento de acesso corporativo à Internet (serviço) em Link dedicado. </td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>28/11/2016</td>
+	                                      </tr>
+                                     		                                      <tr>
+	                                        <td>00003/SEAD/2016</td>
+	                                        <td>SEAD</td>
+	                                        <td>AQUISIÇÃO DE MATERIAL (GENEROS ALIMENTÍCIOS)</td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>19/10/2016</td>
+	                                      </tr>
+                                     		                                      <tr>
+	                                        <td>00002/SEAD/2016</td>
+	                                        <td>SEAD</td>
+	                                        <td>AQUISIÇÃO DE MATERIAIS DE EXPEDIENTE, para atender a SECRETARIA DE ESTADO DA ADMINISTRAÇÃO e suas un</td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>20/09/2016</td>
+	                                      </tr>
+                                     		                                      <tr>
+	                                        <td>00001/SEAD/2016</td>
+	                                        <td>SEAD</td>
+	                                        <td>Aquisição de Equipamento de TI, para atender às necessidades do parque tecnológico destinado ao Proj</td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>14/09/2016</td>
+	                                      </tr>-->
+                                     	                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+    </div>
+
+
+
+
+            </body><object id="d86a0b4a-58e8-a3b5-e9c8-3abf7a9dbb8b" width="0" height="0" type="application/gas-events-cef"></object></html>

@@ -1,0 +1,235 @@
+@azul_um : #0f1d66;
+@azul_dois : #0060ae;
+
+@font-face {  font-family: "fblack"; src: url("robotoblack.ttf") format("truetype"); }
+@font-face {  font-family: "fbold";  src: url("robotobold.ttf") format("truetype"); }
+@font-face {  font-family: "flight";  src: url("robotolight.ttf") format("truetype"); }
+@font-face {  font-family: "fregular"; src: url("robotoregular.ttf") format("truetype"); }
+
+
+//////// SINTAXES BOOTSTRAP
+.navbar { margin-bottom: 0 !important; border-radius: 0 !important; border: 0 !important;}
+.navbar-default { background: @azul_dois !important; font-family: fbold; text-transform: uppercase; font-size: 12px}
+.navbar-right .social i { margin-top: 11px}
+#breadcrumb { margin-top: 30px}
+#breadcrumb a {color: #333; text-decoration: none}
+#breadcrumb a:hover {color: #0b6c9a}
+.licita-tab { padding-top: 20px !important;}
+.modal-content iframe { border:none; }
+#accordion .panel-title a:link { text-decoration: none; font-size: 14px; font-family: fblack}
+///////////////////////////
+
+#controle .btn {margin-right: 10px}
+#licitacoes a:link { text-decoration: none;}
+#galerias .thumbnail { padding: 10px;transition: 0.5s}
+#galerias .titulo_galeria { color: #333; font-weight: bold; margin-top: 10px; margin-bottom: 10px; border-bottom: 1px solid #999; padding-bottom: 10px }
+#galerias .caption { color: #333; font-size: 16px; font-weight: bold; margin: 0; padding: 0}
+#galerias .caption .dados { font-size: 12px; color: #999}
+#galerias .thumbnail:hover { background-color: #f3f3f3;}
+
+#busca { margin-bottom: 30px}
+
+#noticias a { text-decoration: none}
+#noticias .fakeImg { background: no-repeat center; background-size: cover;float: left;margin: 0 10px 10px 0; }
+#noticias .espaco { margin-bottom: 20px}
+#noticias .data {font-size: 12px; font-family: fregular; color: #333; margin-bottom: 5px;}
+#noticias .titulo {font-size: 30px; color: #0b6c9a; font-family: fblack; line-height: 40px; margin-bottom: 10px}
+#noticias .chamada_principal {font-size: 14px; color: #333; font-family: fregular; display: block; border-bottom: 1px solid #ccc; padding-bottom: 33px}
+#noticias .chamada { font-size: 15px; color: #333; font-weight: bold; display: block; margin-bottom: 10px; font-family: fbold; transition: 0.5s }
+#noticias .img_principal {margin-top: 20px; background-color: #f3f3f3; display: block}
+#noticias .foto { font-size: 14px; color: #333; margin-bottom: 5px; margin-top: 5px;}
+#noticias .legenda { font-size: 14px; color: #333; margin-bottom: 20px; margin-top: 5px;}
+#noticias .autor {font-size: 12px; font-family: fregular; color: #333; margin: 10px 0}
+#noticias .texto { font-size: 12px; color: #333; font-family: fregular; margin-bottom: 10px;}
+#noticias .texto_noticia {font-size: 15px !important; font-family: fregular !important; color: #333; line-height: 22px; margin-top: 20px; margin-bottom: 30px}
+#noticias .nota { transition: 0.5s}
+#noticias .nota:hover {
+  .chamada { color: @azul_dois}
+  .texto { color: #999}
+}
+#noticias .galeria ul li img { transition: 0.5s }
+#noticias .galeria ul li img:hover{ cursor:pointer; background-color: @azul_dois}
+#noticias .dados_galeria { font-size: 12px; font-family: fregular; color: #333; margin-top: 5px}
+#noticias .desc_galeria { font-size: 30px; font-family: fblack; color: @azul_dois; margin-top: 5px}
+
+#noticias .relacionadas { margin-bottom: 40px}
+#noticias .relacionadas ul li img { margin-bottom: 20px; -webkit-filter: opacity(80%); filter: opacity(80%); transition: 0.5s;}
+#noticias .relacionadas ul li img:hover { margin-bottom: 20px; -webkit-filter: opacity(100%); filter: opacity(100%);}
+
+#mais_lidas .row .data { font-size: 12px; font-family: fregular; color: #333; margin-bottom: 5px; }
+#mais_lidas .row .chamada { font-size: 14px; color: #0060AE; font-weight: bold; font-family: fbold; border-bottom: 1px solid #ccc; padding-bottom: 10px; margin-bottom: 20px; transition: 0.5s; }
+#mais_lidas .row:hover{
+  .chamada { color: #999999}
+}
+
+#titulos { font-size: 25px; color: #0060AE; font-family: fblack}
+#titulos_menor { font-size: 18px; color: #0060AE; font-family: fblack}
+.block_titulo {width: 100px; height: 5px; background-color: #0060AE}
+.block_titulo_linha { width: 100%; border-bottom: 1px solid #0060AE; margin-bottom: 20px}
+
+.scroll-to-top { display: none;  position: fixed; bottom: 30px; right: 50px;padding: 2px;background-color:#f3f3f3; border-radius: 5px; text-align:center; z-index: 500;  }
+.scroll-to-top a:link { text-decoration: none}
+
+.topo_um a:link, .topo_um a:visited { color:#FFF; text-decoration: none }
+.topo_um a:hover { color:#f3f3f3 }
+.topo_um .brasao { margin-right: 20px }
+.topo_um .pull-left .gov {margin-top: 10px; font-weight: bold }
+.topo_um .pull-left img { float: left; margin-right: 10px; vertical-align: middle; }
+
+.topo_dois .navbar-form { margin-right: -15px}
+.topo_dois a:link, .topo_dois a:visited { color:#FFF; text-decoration: none; transition: 0.5s; }
+.topo_dois a:hover,.topo_dois a:active { color: #3ba5f3  }
+.topo_dois .social i { margin-right: 10px}
+.topo_dois .busca { float: right}
+.topo_dois .altura { margin: 5px 0}
+.topo_dois .navbar-form { padding: 0}
+
+.banner { padding-bottom: 30px; padding-top: 30px; }
+.banner h1 { font-family: fblack; color: @azul_um; margin-bottom: -5px}
+.banner h3 { font-family: fregular; color: #333}
+
+.menu { background-color: @azul_dois; margin-bottom: 30px}
+.menu a:link, .menu a:visited, .menu a:active { color: #fFF}
+.menu a:hover { color:#3ba5f3 !important; }
+
+.menu ul li a:link,.menu ul li a:visited { color: #fff; transition: 0.5s}
+.menu ul li a:hover {color: #3ba5f3 !important;}
+
+.menu ul li .dropdown-menu a:link,.menu ul li .dropdown-menu a:visited { color: #333; transition: 0.5s; font-size: 12px}
+.menu ul li .dropdown-menu a:hover {color: #3ba5f3 !important;}
+
+#links-rodape { margin-top: 50px}
+#links-rodape a { text-decoration: none;}
+#links-rodape .thumbnail { transition: 0.5s; }
+#links-rodape .thumbnail:hover { background-color: #f3f3f3; }
+#links-rodape .thumbnail i {display: block; text-align: center; margin-top: 20px; color: @azul_dois}
+#links-rodape .thumbnail h4 {text-align: center; border-bottom: 3px solid @azul_dois; color: @azul_um; padding-bottom: 10px; min-height: 50px; font-weight: bold; transition: 0.5s;}
+#links-rodape .thumbnail .caption {padding: 5px 10px; color: #333}
+
+#publicidade img { margin-bottom: 30px}
+
+#mapa { margin-top: 50px; margin-bottom: 50px}
+
+.fortaleza { margin-top: 30px}
+
+#rodape_um {background-color:#0b6c9a; padding-top: 50px; padding-bottom: 30px}
+#rodape_um .titulos {border-bottom: 1px solid #fff; padding: 5px; display: block; font-size: 15px; font-family: fblack; color: #FFF; margin-bottom: 15px}
+#rodape_um a { text-decoration: none; color: #fff;transition: 0.5s}
+#rodape_um a:hover { color: #3ba5f3}
+
+#rodape_dois { background-color: @azul_um; padding: 20px 0; color: #fff}
+#rodape_dois a { text-decoration: none; color: #FFF; transition: 0.5s}
+#rodape_dois a:hover { color:#3ba5f3; transition: 0.5s }
+#rodape_dois .pull-right,#rodape_dois .text-center img { padding-top: 10px}
+
+#nwconfirma { background: url("../../img/fundo_captcha.jpg"); font-weight: bold; }
+#captcha_contato { background: url("../../img/fundo_captcha.jpg"); font-weight: bold; }
+
+#conteudo ul li a { border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-bottom: 5px; display: block }
+
+/* ESTILOS PERSONALIZADOS INICIO */
+.c-titulo { color: yellow; font-family: fbold; text-shadow: 2px 2px 3px #333; padding-top: 10px; margin-bottom: 3px}
+.c-chamada { color: #FFFFFF; font-family: fregular; text-shadow: 2px 2px 3px #333;}
+#myCarousel { margin-bottom: 25px}
+
+#servicos i { color: #999; transition: 0.5s}
+#servicos tr:hover {  background: #f3f3f3; i{ color: #333 } }
+
+#links-uteis a { text-decoration: none}
+#links-uteis img {margin-bottom: 10px}
+
+#links-uteis .thumbnail { background: #333; transition: 0.5s}
+#links-uteis .thumbnail img { padding: 5px 5px 0 5px; border-radius: 5px}
+#links-uteis .thumbnail:hover { background: #000;}
+#links-uteis .thumbnail .caption { color: #FFF; padding: 5px; text-align: center; font-weight: bold; transition: 0.5s}
+#links-uteis .thumbnail:hover{
+  .caption { color: #FFF
+  }
+}
+
+//THUMB VIDEOS INICIO
+.video-list-thumbs{}
+.video-list-thumbs > li{ margin-bottom:12px; }
+.video-list-thumbs > li:last-child{}
+.video-list-thumbs > li > a{ display:block; position:relative; background-color: #111; color: #fff; padding: 8px; border-radius:3px; transition:all 500ms ease-in-out; border-radius:4px }
+.video-list-thumbs > li > a:hover{ box-shadow:0 2px 5px rgba(0,0,0,.3); text-decoration:none }
+.video-list-thumbs h2{ bottom: 0; font-weight: bold;font-size: 12px; }
+.video-list-thumbs .glyphicon-play-circle{ color: #333;font-size: 60px; opacity: 0.6; position: absolute;right: 39%;top: 31%;text-shadow: 0 1px 3px rgba(0,0,0,.5); transition:all 500ms ease-in-out; }
+.video-list-thumbs > li > a:hover .glyphicon-play-circle{ color:#fff; opacity:1; text-shadow:0 1px 3px rgba(0,0,0,.8); }
+.video-list-thumbs .duration{ background-color: rgba(0, 0, 0, 0.4); border-radius: 2px; color: #fff; font-size: 11px; font-weight: bold; left: 12px;line-height: 13px;padding: 2px 3px 1px; position: absolute; top: 12px; transition:all 500ms ease; }
+.video-list-thumbs > li > a:hover .duration{ background-color:#000; }
+//THUMB VIDEOS INICIO
+
+/* ESTILOS PERSONALIZADOS FINAL */
+
+/* Extra Small */
+@media(max-width:767px){
+  .topo_dois .social { text-align: center}
+  .banner .logo img { margin: 0 auto }
+  .banner .nome { text-align: center; margin-top: 20px }
+  .navbar-default .navbar-nav .open .dropdown-menu>li>a {  color: #FFF !important;  }
+  .fortaleza {  background: url("../../img/fundo_rodape.jpg"); height: 65px; background-repeat:no-repeat;  background-size:contain;  background-position:center;  }
+  #galerias .titulo_galeria {font-size: 14px;}
+
+  /*PERSONALIZADOS*/
+  #links-uteis { margin-top: 20px}
+  #noticias .texto { margin-top: 10px}
+  .video-list-thumbs .glyphicon-play-circle{ font-size: 60px; right: 41%; top: 31%; }
+  .video-list-thumbs h2{ bottom: 0; font-size: 12px;height: 22px; margin: 8px 0 0; }
+  .c-titulo { font-size: 10px }
+  .c-chamada { font-size: 14px }
+}
+
+/* Small */
+@media(min-width:768px) and (max-width:991px){
+  .topo_dois .social { display: inline}
+  .banner .logo { float: left}
+  .menu .navbar-nav {  width: 100%;  text-align: center; }
+  .menu .navbar-nav > li {  float: none;  display: inline-block;  }
+  .fortaleza {  background: url("../../img/fundo_rodape.jpg");  height: 130px;  background-repeat:no-repeat;  background-size:contain;  background-position:center; }
+  .publicidade img { margin: 20px 0}
+  #galerias .thumbnail { height: 230px}
+  #galerias .titulo_galeria {font-size: 14px;}
+
+  /*PERSONALIZADOS*/
+  .video-list-thumbs .glyphicon-play-circle{ font-size: 40px; right: 39%; top: 31%; }
+  .video-list-thumbs h2{ bottom: 0; font-size: 12px;height: 22px; margin: 8px 0 0; }
+  .c-titulo { font-size: 15px }
+  .c-chamada { font-size: 20px }
+  .myjtline { margin-top: -30px}
+}
+
+/* Medium */
+@media(min-width:992px) and (max-width:1199px){
+  .topo_dois .social { display: inline}
+  .banner .logo { float: left}
+  .menu .navbar-nav {  width: 100%;  text-align: center; }
+  .menu .navbar-nav > li {  float: none;  display: inline-block;  }
+  .fortaleza {  background: url("../../img/fundo_rodape.jpg");  height: 180px;  background-repeat:no-repeat;  background-size:contain;  background-position:center;  }
+  #galerias .thumbnail { height: 250px}
+  #galerias .titulo_galeria {font-size: 16px;}
+
+  /*PERSONALIZADOS*/
+  .video-list-thumbs .glyphicon-play-circle{ font-size: 60px; right: 38%; top: 28%; }
+  .video-list-thumbs h2{ bottom: 0; font-size: 12px;height: 22px; margin: 8px 0 0; }
+  .c-titulo { font-size: 15px }
+  .c-chamada { font-size: 20px }
+  .myjtline { margin-top: -20px}
+}
+
+/* Large */
+@media(min-width:1200px){
+  .topo_dois .social { display: inline}
+  .banner .logo { float: left; margin-right: 30px}
+  .menu .navbar-nav {  width: 100%;  text-align: center; }
+  .menu .navbar-nav > li {  float: none;  display: inline-block;  }
+  .fortaleza {  background: url("../../img/fundo_rodape.jpg"); height: 220px;  background-repeat:no-repeat;  background-size:contain;  background-position:center;  }
+  #galerias .thumbnail { height: 290px}
+  #galerias .titulo_galeria {font-size: 16px;}
+
+  /*PERSONALIZADOS*/
+  .c-titulo { font-size: 15px }
+  .c-chamada { font-size: 20px }
+  .myjtline { margin-top: -70px}
+
+}

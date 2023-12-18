@@ -1,0 +1,313 @@
+
+<!-- saved from url=(0076)http://192.168.252.136:8080/slideshowdashboard/integracao/viewProcessosTotal -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Central de Requisitos - Kanban</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="./viewProcessosTotal_files/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="./viewProcessosTotal_files/sb-admin.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="./viewProcessosTotal_files/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+	<script src="./viewProcessosTotal_files/Chart.Core.js"></script>
+	<script src="./viewProcessosTotal_files/Chart.Doughnut.js"></script>
+	<style>
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		#canvas-holder{
+			width:50%;
+		}
+    .c3-chart-arc text {
+      fill:#fff;
+      font-size:20px;
+    }
+    text{
+      font-size:15px;
+    }
+    #chart{
+      width:900px;
+      height:490px;
+    }
+    .page-body{
+        padding: 10px;
+    }
+    .painel-left{
+      background-color: #00994C;  
+      border-radius: 15px 15px 0px 0px;
+      min-height: 70px;
+    }
+    .text-panel-left{
+      color: white;
+      text-align: center;
+      font-size: 20px;
+    }
+    .text-panel-left-number{
+      color: #00994C;
+      text-align: center;
+      font-size: 90px;
+      font-weight: bold;
+    }
+    .text-panel-left-int-nome{
+      color: #00994C;
+      font-size: 20px;
+      font-weight: bold;
+      vertical-align: top;
+      width: 80%;
+    }
+    .text-panel-left-int-qtd{
+      color: #00994C;
+      font-size: 20px;
+      font-weight: bold;
+      vertical-align: top;
+    }
+    .body-panel{
+      height:80%;
+      background-color:#f5f5f5;
+    }
+    .painel-table{
+      background-color: #00994C;  
+      border-radius: 15px 15px 0px 0px;
+      min-height: 70px;
+    }
+    .text-table{
+      color: white;
+      text-align: center;
+      font-size: 18px;
+    }
+	</style>
+
+	<script type="text/javascript" src="./viewProcessosTotal_files/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined variable: projetos</p>
+<p>Filename: _inc/topo.php</p>
+<p>Line Number: 94</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\SlideShow\xampp\htdocs\slideshowdashboard\application\views\_inc\topo.php<br />
+			Line: 94<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\SlideShow\xampp\htdocs\slideshowdashboard\application\views\processosTotal.php<br />
+			Line: 2<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\SlideShow\xampp\htdocs\slideshowdashboard\application\controllers\Integracao.php<br />
+			Line: 209<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\SlideShow\xampp\htdocs\slideshowdashboard\index.php<br />
+			Line: 292<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Warning</p>
+<p>Message:  Invalid argument supplied for foreach()</p>
+<p>Filename: _inc/topo.php</p>
+<p>Line Number: 94</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\SlideShow\xampp\htdocs\slideshowdashboard\application\views\_inc\topo.php<br />
+			Line: 94<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\SlideShow\xampp\htdocs\slideshowdashboard\application\views\processosTotal.php<br />
+			Line: 2<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\SlideShow\xampp\htdocs\slideshowdashboard\application\controllers\Integracao.php<br />
+			Line: 209<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\SlideShow\xampp\htdocs\slideshowdashboard\index.php<br />
+			Line: 292<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>      }
+    </script>
+
+<script type="text/javascript" src="./viewProcessosTotal_files/app_plus.js"></script></head>
+
+           
+     
+    
+
+    <body><div id="page-wrapper" class="page-body">	
+        
+<style>
+.div-topo{
+  background-color: #00994C;  
+  border-radius: 15px;
+  margin-top: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  width: 98%;
+  min-height: 120px;
+}
+.img-topo{
+  height:100px;
+  margin: 10px;
+}
+.img-topo-right{
+  height:100px;
+  margin: 10px;
+  float:right;
+}
+.text-topo{
+  color: white;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 40px;
+}
+</style>
+        <div class="row">
+                    <div class="col-lg-4 col-md-8">
+                        <div class="panel panel-success body-panel">
+                            <div class="painel-left">
+    							<div class="row">
+    								<div class="col-xs-12 text-center">
+    									<h3 class="text-panel-left">Total de Processos Finalizados</h3>
+    								</div>	
+    							</div>
+                            </div>
+                            <a href="http://192.168.252.15/licitapregao/viewProcessosTotal.html">
+                            <!--<a href="http://192.168.252.136:8080/slideshowdashboard/integracao/viewProcessosTotal#">-->
+                                <div class="panel-footer panel-success" style="height: 65%;">
+                                    <div class="row">
+                                        <div class="col-xs-10 text-right">
+                                            <div class="text-panel-left-number">15</div>
+                                        </div>
+                                    </div>
+                                                                            <h3><span class="pull-left text-panel-left-int-nome">PREGÃO ELETRÔNICO</span></h3>
+                                        <h3><span class="pull-right text-panel-left-int-qtd">15</span></h3>
+                                        <div class="clearfix"></div>
+                                                                    </div>
+                            </a>
+                        </div>
+                    </div>
+                
+    				    			
+                    <!--Grafico-->
+                    <div class="col-lg-8"> 
+                        <div class="panel panel-success body-panel">
+                            <div class="painel-left">
+                                <div class="row">
+                                    <div class="col-xs-12 text-center">
+                                        <h3 class="text-panel-left"><i class="fa fa-fw fa-bar-chart-o"></i> Total por Modalidades
+                                            <i class="fa fa-circle-o-notch fa-spin fa-1x fa-fw margin-bottom"></i>                                          
+                                        </h3>
+                                    </div>  
+                                </div>
+  
+                            </div>
+                            <div class="panel-body">
+                                <div id="canvas-holder">
+    								<section class="page">
+    									<div class="sidebar-content">
+    										<section id="analytic-task-repartition">
+    											<div id="chart" data-metrics="[{&quot;column_title&quot;:&quot;PREGÃO ELETRÔNICO&quot;,&quot;nb_tasks&quot;:15}]" class="c3" style="max-height: 490px; position: relative;"><svg width="900" height="490" style="overflow: hidden;"><defs><clippath id="c3-1493238782846-clip"><rect width="900" height="465"></rect></clippath><clippath id="c3-1493238782846-clip-xaxis"><rect x="-31" y="-20" width="962" height="41"></rect></clippath><clippath id="c3-1493238782846-clip-yaxis"><rect x="-29" y="-4" width="20" height="489"></rect></clippath><clippath id="c3-1493238782846-clip-grid"><rect width="900" height="465"></rect></clippath><clippath id="c3-1493238782846-clip-subchart"><rect width="900"></rect></clippath></defs><g transform="translate(0.5,4.5)"><text class="c3-text c3-empty" text-anchor="middle" dominant-baseline="middle" x="450" y="232.5" style="opacity: 0;"></text><rect class="c3-zoom-rect" width="900" height="465" style="opacity: 0;"></rect><g clip-path="url(http://192.168.252.136:8080/slideshowdashboard/integracao/viewProcessosTotal#c3-1493238782846-clip)" class="c3-regions" style="visibility: hidden;"></g><g clip-path="url(http://192.168.252.136:8080/slideshowdashboard/integracao/viewProcessosTotal#c3-1493238782846-clip-grid)" class="c3-grid" style="visibility: hidden;"><g class="c3-xgrid-focus"><line class="c3-xgrid-focus" x1="-10" x2="-10" y1="0" y2="465" style="visibility: hidden;"></line></g></g><g clip-path="url(http://192.168.252.136:8080/slideshowdashboard/integracao/viewProcessosTotal#c3-1493238782846-clip)" class="c3-chart"><g class="c3-event-rects c3-event-rects-single" style="fill-opacity: 0;"><rect class=" c3-event-rect c3-event-rect-0" x="0" y="0" width="900" height="465"></rect></g><g class="c3-chart-bars"><g class="c3-chart-bar c3-target c3-target-PREGÃO-ELETRÔNICO" style="opacity: 1; pointer-events: none;"><g class=" c3-shapes c3-shapes-PREGÃO-ELETRÔNICO c3-bars c3-bars-PREGÃO-ELETRÔNICO" style="cursor: pointer;"></g></g></g><g class="c3-chart-lines"><g class="c3-chart-line c3-target c3-target-PREGÃO-ELETRÔNICO" style="opacity: 1; pointer-events: none;"><g class=" c3-shapes c3-shapes-PREGÃO-ELETRÔNICO c3-lines c3-lines-PREGÃO-ELETRÔNICO"></g><g class=" c3-shapes c3-shapes-PREGÃO-ELETRÔNICO c3-areas c3-areas-PREGÃO-ELETRÔNICO"></g><g class=" c3-selected-circles c3-selected-circles-PREGÃO-ELETRÔNICO"></g><g class=" c3-shapes c3-shapes-PREGÃO-ELETRÔNICO c3-circles c3-circles-PREGÃO-ELETRÔNICO" style="cursor: pointer;"></g></g></g><g class="c3-chart-arcs" transform="translate(450,227.5)"><text class="c3-chart-arcs-title" style="text-anchor: middle; opacity: 1;"></text><g class="c3-chart-arc c3-target c3-target-PREGÃO-ELETRÔNICO"><g class=" c3-shapes c3-shapes-PREGÃO-ELETRÔNICO c3-arcs c3-arcs-PREGÃO-ELETRÔNICO"><path class=" c3-shape c3-shape c3-arc c3-arc-PREGÃO-ELETRÔNICO" transform="" d="M0,216.125A216.125,216.125 0 1,1 0,-216.125A216.125,216.125 0 1,1 0,216.125M0,129.67499999999998A129.67499999999998,129.67499999999998 0 1,0 0,-129.67499999999998A129.67499999999998,129.67499999999998 0 1,0 0,129.67499999999998Z" style="fill: rgb(31, 119, 180); cursor: pointer; opacity: 1;"></path></g><text dy=".35em" class="" transform="translate(1.0587071578628869e-14,172.9)" style="opacity: 1; text-anchor: middle; pointer-events: none;">100.0%</text></g></g><g class="c3-chart-texts"><g class="c3-chart-text c3-target c3-target-PREGÃO-ELETRÔNICO" style="opacity: 1; pointer-events: none;"><g class=" c3-texts c3-texts-PREGÃO-ELETRÔNICO"></g></g></g></g><g clip-path="url(http://192.168.252.136:8080/slideshowdashboard/integracao/viewProcessosTotal#c3-1493238782846-clip-grid)" class="c3-grid c3-grid-lines"><g class="c3-xgrid-lines"></g><g class="c3-ygrid-lines"></g></g><g class="c3-axis c3-axis-x" clip-path="url(http://192.168.252.136:8080/slideshowdashboard/integracao/viewProcessosTotal#c3-1493238782846-clip-xaxis)" transform="translate(0,465)" style="visibility: visible; opacity: 0;"><text class="c3-axis-x-label" transform="" x="900" dx="-0.5em" dy="-0.5em" style="text-anchor: end;"></text><g class="tick" transform="translate(450, 0)" style="opacity: 1;"><line y2="6" x1="0" x2="0"></line><text y="9" x="0" transform="" style="text-anchor: middle; display: block;"><tspan x="0" dy=".71em" dx="0">0</tspan></text></g><path class="domain" d="M0,6V0H900V6"></path></g><g class="c3-axis c3-axis-y" clip-path="url(http://192.168.252.136:8080/slideshowdashboard/integracao/viewProcessosTotal#c3-1493238782846-clip-yaxis)" transform="translate(0,0)" style="visibility: visible; opacity: 0;"><text class="c3-axis-y-label" transform="rotate(-90)" x="0" dx="-0.5em" dy="1.2em" style="text-anchor: end;"></text><g class="tick" transform="translate(0,427)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">0</tspan></text></g><g class="tick" transform="translate(0,375)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">2</tspan></text></g><g class="tick" transform="translate(0,324)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">4</tspan></text></g><g class="tick" transform="translate(0,272)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">6</tspan></text></g><g class="tick" transform="translate(0,221)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">8</tspan></text></g><g class="tick" transform="translate(0,169)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">10</tspan></text></g><g class="tick" transform="translate(0,117)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">12</tspan></text></g><g class="tick" transform="translate(0,66)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">14</tspan></text></g><g class="tick" transform="translate(0,14)" style="opacity: 1;"><line x2="-6"></line><text x="-9" y="0" style="text-anchor: end;"><tspan x="-9" dy="3">16</tspan></text></g><path class="domain" d="M-6,1H0V465H-6"></path></g><g class="c3-axis c3-axis-y2" transform="translate(900,0)" style="visibility: hidden; opacity: 0;"><text class="c3-axis-y2-label" transform="rotate(-90)" x="0" dx="-0.5em" dy="-0.5em" style="text-anchor: end;"></text><g class="tick" transform="translate(0,465)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0</tspan></text></g><g class="tick" transform="translate(0,419)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.1</tspan></text></g><g class="tick" transform="translate(0,373)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.2</tspan></text></g><g class="tick" transform="translate(0,326)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.3</tspan></text></g><g class="tick" transform="translate(0,280)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.4</tspan></text></g><g class="tick" transform="translate(0,233)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.5</tspan></text></g><g class="tick" transform="translate(0,187)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.6</tspan></text></g><g class="tick" transform="translate(0,141)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.7</tspan></text></g><g class="tick" transform="translate(0,94)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.8</tspan></text></g><g class="tick" transform="translate(0,48)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">0.9</tspan></text></g><g class="tick" transform="translate(0,1)" style="opacity: 1;"><line x2="6" y2="0"></line><text x="9" y="0" style="text-anchor: start;"><tspan x="9" dy="3">1</tspan></text></g><path class="domain" d="M6,1H0V465H6"></path></g></g><g transform="translate(0.5,490.5)" style="visibility: hidden;"><g clip-path="url(http://192.168.252.136:8080/slideshowdashboard/integracao/viewProcessosTotal#c3-1493238782846-clip-subchart)" class="c3-chart"><g class="c3-chart-bars"></g><g class="c3-chart-lines"></g></g><g clip-path="url(http://192.168.252.136:8080/slideshowdashboard/integracao/viewProcessosTotal#c3-1493238782846-clip)" class="c3-brush" style="pointer-events: all; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><rect class="background" x="0" width="900" style="visibility: hidden; cursor: crosshair;"></rect><rect class="extent" x="0" width="0" style="cursor: move;"></rect><g class="resize e" transform="translate(0,0)" style="cursor: ew-resize; display: none;"><rect x="-3" width="6" height="6" style="visibility: hidden;"></rect></g><g class="resize w" transform="translate(0,0)" style="cursor: ew-resize; display: none;"><rect x="-3" width="6" height="6" style="visibility: hidden;"></rect></g></g><g class="c3-axis-x" transform="translate(0,0)" clip-path="url(http://192.168.252.136:8080/slideshowdashboard/integracao/viewProcessosTotal#c3-1493238782846-clip-xaxis)" style="opacity: 0;"><g class="tick" transform="translate(450, 0)" style="opacity: 1;"><line y2="6" x1="0" x2="0"></line><text y="9" x="0" transform="" style="text-anchor: middle; display: block;"><tspan x="0" dy=".71em" dx="0">0</tspan></text></g><path class="domain" d="M0,6V0H900V6"></path></g></g><g transform="translate(0,469)"><g class="c3-legend-item c3-legend-item-PREGÃO-ELETRÔNICO" style="visibility: visible; cursor: pointer;"><text x="373.40625" y="9" style="pointer-events: none;">PREGÃO ELETRÔNICO</text><rect class="c3-legend-item-event" x="359.40625" y="-5" width="181.1875" height="21" style="fill-opacity: 0;"></rect><rect class="c3-legend-item-tile" x="359.40625" y="0" width="10" height="10" style="pointer-events: none; fill: rgb(31, 119, 180);"></rect></g></g></svg><div class="c3-tooltip-container" style="position: absolute; pointer-events: none; display: none; top: 174.5px; left: 248.844px;"><table class="c3-tooltip"><tbody><tr class="c3-tooltip-name-PREGÃO ELETRÔNICO"><td class="name"><span style="background-color:#1f77b4"></span>PREGÃO ELETRÔNICO</td><td class="value">100.0%</td></tr></tbody></table></div></div>
+    										</section>
+    									</div>												
+    									<script type="text/javascript" src="./viewProcessosTotal_files/d3.v3.min.js"></script>
+    									<script type="text/javascript" src="./viewProcessosTotal_files/c3.min.js"></script>        
+    								</section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+    </div>
+
+
+
+
+            </body><object id="b9fbcbe8-59bb-88b1-98ab-9bb09a9f8598" width="0" height="0" type="application/gas-events-cef"></object></html>

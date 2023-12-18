@@ -25,6 +25,8 @@ class PublicacaoResource extends Resource
 
     protected static ?string $slug = 'publicacao';
 
+    protected static ?int $navigationSort = 6;
+
     public static function form(Form $form): Form
     {
         return $form

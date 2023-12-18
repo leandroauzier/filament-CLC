@@ -1,0 +1,111 @@
+#banner { background-image: url('../../img/fundo-banner.jpg'); box-shadow: 0px 2px 3px #ccc}
+.navbar-gov {background-color: #0f4e96;
+             color: #FFF;
+             border:0;
+}
+.carousel-caption {
+    top: auto;
+    bottom: 0;
+}
+
+.navbar-gov .navbar-brand {
+    color: #FFF;
+}
+.navbar-gov .navbar-brand:hover,
+.navbar-gov .navbar-brand:focus {
+    color: #fff;
+    background-color: transparent;
+}
+.navbar-gov .navbar-text {
+    color: #9d9d9d;
+}
+.navbar-gov .navbar-nav > li > a {
+    color: #FFF;
+}
+.navbar-gov .navbar-nav > li > a:hover,
+.navbar-gov .navbar-nav > li > a:focus {
+    color: #fff;
+    background-color: transparent;
+}
+.navbar-gov .navbar-nav > .active > a,
+.navbar-gov .navbar-nav > .active > a:hover,
+.navbar-gov .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: #e7e7e7;
+}
+.navbar-gov .navbar-nav > .disabled > a,
+.navbar-gov .navbar-nav > .disabled > a:hover,
+.navbar-gov .navbar-nav > .disabled > a:focus {
+    color: #444;
+    background-color: transparent;
+}
+.navbar-gov .navbar-toggle {
+    border-color: #0f4e96;
+}
+.navbar-gov .navbar-toggle:hover,
+.navbar-gov .navbar-toggle:focus {
+    background-color: #0f4e96;
+}
+.navbar-gov .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+.navbar-gov .navbar-collapse,
+.navbar-gov .navbar-form {
+    border-color: #0f4e96;
+}
+.navbar-gov .navbar-nav > .open > a,
+.navbar-gov .navbar-nav > .open > a:hover,
+.navbar-gov .navbar-nav > .open > a:focus {
+    color: #333;
+    background-color: #F3F3F3;
+}
+@media (max-width: 767px) {
+    .navbar-gov .navbar-nav .open .dropdown-menu > .dropdown-header {
+        border-color: #0f4e96;
+        background-color: #a7a7a7;
+    }
+    .navbar-gov .navbar-nav .open .dropdown-menu .divider {
+        background-color: #a7a7a7;
+    }
+    .navbar-gov .navbar-nav .open .dropdown-menu > li > a {
+        color: #333;
+        background-color: #FFF;
+        margin: 5px;
+    }
+    .navbar-gov .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-gov .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #333;
+        background-color: #F3F3F3;
+    }
+    .navbar-gov .navbar-nav .open .dropdown-menu > .active > a,
+    .navbar-gov .navbar-nav .open .dropdown-menu > .active > a:hover,
+    .navbar-gov .navbar-nav .open .dropdown-menu > .active > a:focus {
+        color: #fff;
+        background-color: #a7a7a7;
+    }
+    .navbar-gov .navbar-nav .open .dropdown-menu > .disabled > a,
+    .navbar-gov .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+    .navbar-gov .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+        color: #444;
+        background-color: #a7a7a7;
+    }
+}
+.navbar-gov .navbar-link {
+    color: #9d9d9d;
+}
+.navbar-gov .navbar-link:hover {
+    color: #fff;
+}
+.navbar-gov .btn-link {
+    color: #9d9d9d;
+}
+.navbar-gov .btn-link:hover,
+.navbar-gov .btn-link:focus {
+    color: #fff;
+}
+.navbar-gov .btn-link[disabled]:hover,
+fieldset[disabled] .navbar-gov .btn-link:hover,
+.navbar-gov .btn-link[disabled]:focus,
+fieldset[disabled] .navbar-gov .btn-link:focus {
+    color: #444;
+}

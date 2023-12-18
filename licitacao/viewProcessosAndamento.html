@@ -1,0 +1,461 @@
+
+<!-- saved from url=(0080)http://192.168.252.136:8080/slideshowdashboard/integracao/viewProcessosAndamento -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Central de Requisitos - Kanban</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="./viewProcessosAndamento_files/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="./viewProcessosAndamento_files/sb-admin.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="./viewProcessosAndamento_files/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+	<script src="./viewProcessosAndamento_files/Chart.Core.js"></script>
+	<script src="./viewProcessosAndamento_files/Chart.Doughnut.js"></script>
+	<style>
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		#canvas-holder{
+			width:50%;
+		}
+    .c3-chart-arc text {
+      fill:#fff;
+      font-size:20px;
+    }
+    text{
+      font-size:15px;
+    }
+    #chart{
+      width:900px;
+      height:490px;
+    }
+    .page-body{
+        padding: 10px;
+    }
+    .painel-left{
+      background-color: #00994C;  
+      border-radius: 15px 15px 0px 0px;
+      min-height: 70px;
+    }
+    .text-panel-left{
+      color: white;
+      text-align: center;
+      font-size: 20px;
+    }
+    .text-panel-left-number{
+      color: #00994C;
+      text-align: center;
+      font-size: 90px;
+      font-weight: bold;
+    }
+    .text-panel-left-int-nome{
+      color: #00994C;
+      font-size: 20px;
+      font-weight: bold;
+      vertical-align: top;
+      width: 80%;
+    }
+    .text-panel-left-int-qtd{
+      color: #00994C;
+      font-size: 20px;
+      font-weight: bold;
+      vertical-align: top;
+    }
+    .body-panel{
+      height:80%;
+      background-color:#f5f5f5;
+    }
+    .painel-table{
+      background-color: #00994C;  
+      border-radius: 15px 15px 0px 0px;
+      min-height: 70px;
+    }
+    .text-table{
+      color: white;
+      text-align: center;
+      font-size: 18px;
+    }
+	</style>
+
+	<script type="text/javascript" src="./viewProcessosAndamento_files/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Notice</p>
+<p>Message:  Undefined variable: projetos</p>
+<p>Filename: _inc/topo.php</p>
+<p>Line Number: 94</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\SlideShow\xampp\htdocs\slideshowdashboard\application\views\_inc\topo.php<br />
+			Line: 94<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\SlideShow\xampp\htdocs\slideshowdashboard\application\views\processosAndamento.php<br />
+			Line: 2<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\SlideShow\xampp\htdocs\slideshowdashboard\application\controllers\Integracao.php<br />
+			Line: 221<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\SlideShow\xampp\htdocs\slideshowdashboard\index.php<br />
+			Line: 292<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Warning</p>
+<p>Message:  Invalid argument supplied for foreach()</p>
+<p>Filename: _inc/topo.php</p>
+<p>Line Number: 94</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\SlideShow\xampp\htdocs\slideshowdashboard\application\views\_inc\topo.php<br />
+			Line: 94<br />
+			Function: _error_handler			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\SlideShow\xampp\htdocs\slideshowdashboard\application\views\processosAndamento.php<br />
+			Line: 2<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\SlideShow\xampp\htdocs\slideshowdashboard\application\controllers\Integracao.php<br />
+			Line: 221<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: C:\SlideShow\xampp\htdocs\slideshowdashboard\index.php<br />
+			Line: 292<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>      }
+    </script>
+
+<script type="text/javascript" src="./viewProcessosAndamento_files/app_plus.js"></script></head>
+
+           
+     
+    
+
+    <body><div id="page-wrapper" class="page-body">	
+        
+<style>
+.div-topo{
+  background-color: #00994C;  
+  border-radius: 15px;
+  margin-top: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  width: 98%;
+  min-height: 120px;
+}
+.img-topo{
+  height:100px;
+  margin: 10px;
+}
+.img-topo-right{
+  height:100px;
+  margin: 10px;
+  float:right;
+}
+.text-topo{
+  color: white;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 40px;
+}
+</style>
+        <div class="row">
+                    <div class="col-lg-4 col-md-8">
+                        <div class="panel panel-success body-panel">
+                            <div class="painel-left">
+    							<div class="row">
+    								<div class="col-xs-12 text-center">
+    									<h3 class="text-panel-left">Total de Processos em Andamento</h3>
+    								</div>	
+    							</div>
+                            </div>
+                            <a href="http://192.168.252.15/licitapregao/viewProcessosAndamento.html">
+                            <!--<a href="http://192.168.252.136:8080/slideshowdashboard/integracao/viewProcessosAndamento#">-->
+                                <div class="panel-footer panel-success" style="height: 65%;">
+                                    <div class="row">
+                                        <div class="col-xs-10 text-right">
+                                            <div class="text-panel-left-number">36</div>
+                                        </div>
+                                    </div>
+                                                                            <h3><span class="pull-left text-panel-left-int-nome">COMPRA DIRETA</span></h3>
+                                        <h3><span class="pull-right text-panel-left-int-qtd">2</span></h3>
+                                        <div class="clearfix"></div>
+                                                                            <h3><span class="pull-left text-panel-left-int-nome">DISPENSA DE LICITAÇÃO</span></h3>
+                                        <h3><span class="pull-right text-panel-left-int-qtd">2</span></h3>
+                                        <div class="clearfix"></div>
+                                                                            <h3><span class="pull-left text-panel-left-int-nome">PREGÃO ELETRÔNICO</span></h3>
+                                        <h3><span class="pull-right text-panel-left-int-qtd">32</span></h3>
+                                        <div class="clearfix"></div>
+                                                                    </div>
+                            </a>
+                        </div>
+                    </div>
+                
+    				    			
+                    <!--Grafico-->
+                    <div class="col-lg-8"> 
+                        <div class="panel panel-success body-panel">
+                            <div class="painel-left">
+                                <div class="row">
+                                    <div class="col-xs-12 text-center">
+                                        <h3 class="text-panel-left"><i class="fa fa-fw fa-bar-chart-o"></i> Visão detalhada dos últimos Processos
+                                            <i class="fa fa-circle-o-notch fa-spin fa-1x fa-fw margin-bottom"></i>                                          
+                                        </h3>
+                                    </div>  
+                                </div>
+  
+                            </div>
+                            <div class="panel-body">
+                                <table class="table table-striped">
+                                    <thead class="painel-table">
+                                      <tr class="text-table">
+                                        <th class="text-table">Nº Processo</th>
+                                        <th class="text-table">Órgão</th>
+                                        <th class="text-table">Objeto</th>
+                                        <th class="text-table">Modalidade</th>
+                                        <th class="text-table">Atividade</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                     		                                      <tr>
+	                                        <td>00005/PGE/2017</td>
+	                                        <td>PGE</td>
+	                                        <td>Registro de Preços para futura e eventual aquisição de softwares e equipamentos da plataforma Oracle</td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>Criar Processo</td>
+	                                      </tr>
+                                     		                                      <tr>
+	                                        <td>00002/GABGOV/2017</td>
+	                                        <td>GABGOV</td>
+	                                        <td>Contratação de prestação de serviços continuados de TV por assinatura via cabo, com uso de tecnologi</td>
+	                                        <td>COMPRA DIRETA</td>
+	                                        <td>Criar Processo</td>
+	                                      </tr>
+                                     		                                      <tr>
+	                                        <td>00004/PGE/2017</td>
+	                                        <td>PGE</td>
+	                                        <td>AQUISIÇÃO DE PNEUS.</td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>Criar Processo</td>
+	                                      </tr>
+                                     		                                      <tr>
+	                                        <td>00002/DGPC/2017</td>
+	                                        <td>DGPC</td>
+	                                        <td>Contratação de Empresa para feitura de Carteira de Identificação Funcional da Policia Civil</td>
+	                                        <td>DISPENSA DE LICITAÇÃO</td>
+	                                        <td>Realizar Dotação Orçamentária</td>
+	                                      </tr>
+                                     		                                      <tr>
+	                                        <td>00003/PGE/2017</td>
+	                                        <td>PGE</td>
+	                                        <td>AQUISIÇÃO DE EQUIPAMENTOS DE TI.</td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>Pesquisar Preço</td>
+	                                      </tr>
+<!--                                     		                                      <tr>
+	                                        <td>00002/PGE/2017</td>
+	                                        <td>PGE</td>
+	                                        <td>AQUISIÇÃO DE SUPRIMENTOS DE INFORMÁTICA.</td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>Pesquisar Preço</td>
+	                                      </tr>
+                                     		                                      <tr>
+	                                        <td>00003/SEAD/2017</td>
+	                                        <td>SEAD</td>
+	                                        <td>CONTRATAÇÃO DE EMPRESA ESPECIALIZADA NA EXECUÇÃO DOS SERVIÇOS DE DESINSETIZAÇÃO DE BARATAS E OUTROS </td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>Analisar Processo</td>
+	                                      </tr>
+                                     		                                      <tr>
+	                                        <td>00001/DGPC/2017</td>
+	                                        <td>DGPC</td>
+	                                        <td>Contratação de empresa especializada para prestação de serviços, sob demanda, de confecção de CARTEI</td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>Cancelar Processo</td>
+	                                      </tr>
+                                     		                                      <tr>
+	                                        <td>00002/SEAD/2017</td>
+	                                        <td>SEAD</td>
+	                                        <td>Contratação de empresa especializada para prestação de Serviços de Telecomunicações por meio de tran</td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>Analisar Processo</td>
+	                                      </tr>
+                                     		                                      <tr>
+	                                        <td>00004/SEPM/2017</td>
+	                                        <td>SEPM</td>
+	                                        <td>Manutenção Preventiva e Corretiva de veículos</td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>Criar Processo</td>
+	                                      </tr>
+                                     		                                      <tr>
+	                                        <td>00003/SEPM/2017</td>
+	                                        <td>SEPM</td>
+	                                        <td>Manutenção de central de ar </td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>Criar Processo</td>
+	                                      </tr>
+                                     		                                      <tr>
+	                                        <td>00002/SEPM/2017</td>
+	                                        <td>SEPM</td>
+	                                        <td>Fornecimento de Material Gráfico</td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>Criar Processo</td>
+	                                      </tr>
+                                     		                                      <tr>
+	                                        <td>00001/SEPM/2017</td>
+	                                        <td>SEPM</td>
+	                                        <td>Fornecimento de Material de Consumo</td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>Criar Processo</td>
+	                                      </tr>
+                                     		                                      <tr>
+	                                        <td>00003/CGE/2017</td>
+	                                        <td>CGE</td>
+	                                        <td>CONTRATAÇÃO DE EMPRESA ESPECIALIZADA NA PRESTAÇÃO DE SERVIÇOS DE MANUTENÇÃO PREVENTIVA E CORRETIVA </td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>Analisar Processo</td>
+	                                      </tr>
+                                     		                                      <tr>
+	                                        <td>00002/CGE/2017</td>
+	                                        <td>CGE</td>
+	                                        <td>AQUISIÇÃO DE EQUIPAMENTOS PARA ACESSO A INTERNET SEM FIO (WIFI), DESTINADOS A CONTROLADORIA GERAL DO</td>
+	                                        <td>COMPRA DIRETA</td>
+	                                        <td>Analisar Processo</td>
+	                                      </tr>
+                                     		                                      <tr>
+	                                        <td>00002/PRODAP/2017</td>
+	                                        <td>PRODAP</td>
+	                                        <td>REGISTRO DE PREÇOS visando a contratação de empresa especializada para aquisição de licenças E trein</td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>Cancelar Processo</td>
+	                                      </tr>
+                                     		                                      <tr>
+	                                        <td>00001/CGE/2017</td>
+	                                        <td>CGE</td>
+	                                        <td>A Contratação de serviços especializados para ministrar os Cursos de Excel (básico, intermediário, a</td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>Criar Processo</td>
+	                                      </tr>
+                                     		                                      <tr>
+	                                        <td>00001/GABGOV/2017</td>
+	                                        <td>GABGOV</td>
+	                                        <td>Registro de Preço para futura e eventual contratação de empresa especializada em manutenção preventi</td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>Analisar Processo</td>
+	                                      </tr>
+                                     		                                      <tr>
+	                                        <td>00001/PRODAP/2017</td>
+	                                        <td>PRODAP</td>
+	                                        <td>Registro de Preços para contratação de pessoa jurídica para atender as demandas de customizações e s</td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>Analisar Processo</td>
+	                                      </tr>
+                                     		                                      <tr>
+	                                        <td>00001/PRODAP/2017</td>
+	                                        <td>PRODAP</td>
+	                                        <td>Registro de Preços para contratação de pessoa jurídica para atender as demandas de customizações e s</td>
+	                                        <td>PREGÃO ELETRÔNICO</td>
+	                                        <td>Realizar Dotação Orçamentária</td>
+	                                      </tr>-->
+                                     	                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+    </div>
+
+
+
+
+            </body><object id="99392919-3a6a-8b9d-0a49-8a9588a0af98" width="0" height="0" type="application/gas-events-cef"></object></html>

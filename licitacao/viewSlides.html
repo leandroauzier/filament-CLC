@@ -1,0 +1,60 @@
+
+<!-- saved from url=(0061)http://192.168.252.136:8080/slideshowdashboard/App/viewSlides -->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link href="PRODAP/bootstrap.css" rel="stylesheet">
+		<link rel="stylesheet" href="PRODAP/font-awesome.css">
+		<script type="text/javascript">
+var num=0;
+
+var urls2 = [
+//	"http://kanban.azi.net.br/kanboard/integracao/dataPublicAnalytics/54"
+
+];
+
+var urls = [
+  'http://192.168.252.15/licitapregao/viewProcessosCentral.html','http://192.168.252.15/licitapregao/viewProcessosTotal.html','http://192.168.252.15/licitapregao/viewProcessosAndamento.html'];
+//  'http://192.168.252.136:8080/slideshowdashboard/integracao/viewProcessosCentral','http://192.168.252.136:8080/slideshowdashboard/integracao/viewProcessosTotal','http://192.168.252.136:8080/slideshowdashboard/integracao/viewProcessosAndamento'];
+
+var time = [
+  7000,7000,7000,];
+
+function startslide(){
+	if(num==(urls.length)){
+        num=0;
+        location.reload();
+    }
+    document.getElementById('body').innerHTML='<iframe id="frame1" frameBorder=0 marginHeight=0 marginWidth=0 scrolling=no width="100%" height="100%" src="'+urls[num]+'"></iframe>';
+    window.setTimeout(function(){startslide()},time[num]);
+    num++;
+}
+</script>
+
+</head><body onload="startslide()">
+<div id="body"></div>
+
+
+<script>
+function toggleFullScreen() {
+  if ((document.fullScreenElement && document.fullScreenElement !== null) ||    
+   (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+    if (document.documentElement.requestFullScreen) {  
+      document.documentElement.requestFullScreen();  
+    } else if (document.documentElement.mozRequestFullScreen) {  
+      document.documentElement.mozRequestFullScreen();  
+    } else if (document.documentElement.webkitRequestFullScreen) {  
+      document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);  
+    }  
+  } else {  
+    if (document.cancelFullScreen) {  
+      document.cancelFullScreen();  
+    } else if (document.mozCancelFullScreen) {  
+      document.mozCancelFullScreen();  
+    } else if (document.webkitCancelFullScreen) {  
+      document.webkitCancelFullScreen();  
+    }  
+  }  
+}
+</script>
+</body><object id="ca6adbda-6a49-9dbd-d82a-98a8b8bcb3be" width="0" height="0" type="application/gas-events-cef"></object></html>

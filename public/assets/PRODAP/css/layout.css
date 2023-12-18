@@ -1,0 +1,26 @@
+@font-face {
+    font-family: "fblack";
+    src: url("robotoblack.ttf") format("truetype");
+}
+@font-face {
+    font-family: "fbold";
+    src: url("robotobold.ttf") format("truetype");
+}
+@font-face {
+    font-family: "flight";
+    src: url("robotolight.ttf") format("truetype");
+}
+@font-face {
+    font-family: "fregular";
+    src: url("robotoregular.ttf") format("truetype");
+}
+
+.topo_um { background: #0f1d66; padding: 10px 0; color: #FFF;}
+.topo_dois { background: #0060ae; color: #FFF; border-radius:0 }
+.banner { background: url("https://gestor.amapa.gov.br/img/logos/8ae0abdcc8294b0e993f2c76743c6a83.jpg") no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover; /*Css safari e chrome*/
+    -moz-background-size: cover; /*Css firefox*/
+    -ms-background-size: cover; /*Css IE não use mer#^@%#*/
+    -o-background-size: cover; /*Css Opera*/
+}

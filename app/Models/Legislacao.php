@@ -19,6 +19,13 @@ class legislacao extends Authenticatable implements FilamentUser
     protected $fillable = [
         'nome',
         'arquivo',
+        'ativo',
+    ];
+
+    protected $casts = [
+        'nome' => 'string',
+        'arquivo'=> 'string',
+        'ativo' => 'boolean',
     ];
     public function canAccessPanel(Panel $panel): bool
     {

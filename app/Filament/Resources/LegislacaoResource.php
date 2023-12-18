@@ -17,7 +17,7 @@ class LegislacaoResource extends Resource
 {
     protected static ?string $model = Legislacao::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-document';
 
     protected static ?string $navigationGroup = "Acervo";
 
@@ -44,6 +44,8 @@ class LegislacaoResource extends Resource
                                     ->minSize(512)
                                     ->maxSize(8024)
                                     ->openable(),
+                                Forms\Components\Toggle::make('ativo')
+                                    ->columnSpan('full')
                             ])
                     ])->columnSpan('full')
             ]);
@@ -60,6 +62,8 @@ class LegislacaoResource extends Resource
                 Tables\Columns\TextColumn::make("arquivo")
                     ->label("Arquivo")
                     ->sortable()
+                    ->searchable(),
+                Tables\Columns\TextColumn::make("ativo")
                     ->searchable(),
             ])
             ->filters([

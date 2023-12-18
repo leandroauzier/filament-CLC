@@ -1,0 +1,545 @@
+<?php
+require 'part/config.php';
+require 'part/connection.php';
+require 'part/database.php';
+require 'insumo/consultas.php';
+require './_app/Config.inc.php';
+
+$publicacoes = new Read;
+$publicacoes->ExeRead("noticia,midia", "WHERE  Area_cd_area = 733 and cd_noticia = cd_not and tp_midia = 'Texto' ORDER BY cd_noticia DESC LIMIT 4");
+
+$legislacao = new Read;
+$legislacao->ExeRead("noticia,midia", "WHERE  Area_cd_area = 734 and cd_noticia = cd_not and tp_midia = 'Texto'  ORDER BY cd_noticia DESC LIMIT 5");
+
+
+$getexe = filter_input(INPUT_GET, 'exe', FILTER_DEFAULT);
+//error_reporting(0);
+
+//$getSlide = DBRead('noticia, midia', "where Area_cd_area = 731 and cd_noticia = cd_not and tp_midia = 'Imagem' order by cd_noticia desc limit 6", 'cd_not, arquivo, nm_noticia, texto');
+
+$getNoticias = DBRead('noticia, midia', "where Area_cd_area = 732 and cd_noticia = cd_not and tp_midia = 'Imagem' order by cd_noticia desc limit 4", 'cd_not, arquivo, nm_noticia, texto');
+
+$getAllNoticias = DBRead('noticia, midia', "where Area_cd_area = 732 and cd_noticia = cd_not and tp_midia = 'Imagem' order by cd_noticia desc", 'cd_not, arquivo, nm_noticia, texto');
+?>
+<!DOCTYPE html>
+<html lang="pt-br"><head>
+
+        <link rel="stylesheet" type="text/css" href="Compras/css.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="Compras/libs.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="Compras/metronic-layout.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="Compras/metronic.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="Compras/estado.css">
+
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="PRODAP">
+        <meta name="description" content="Centro de Gestão da Tecnologia da Informação">
+        <meta name="keywords" content="Governo do Amapá">
+        <meta name="reply-to" content="cotec@prodap.ap.gov.br">
+        <link rel="shortcut icon" href="https://prodap.ap.gov.br/img/favicon.ico">
+        <title>CLC - Central de Licitações e Contratos</title>
+        <link rel="stylesheet/less" type="text/css" href="scripts/css/estilo.less">
+        <link href="scripts/css/licita.css" rel="stylesheet">
+        
+        <link rel="stylesheet" href="PRODAP/tipped.css">
+        <link rel="stylesheet" href="scripts/css/font-awesome.css">
+        <link rel="stylesheet" href="PRODAP/owl_002.css">
+        <link rel="stylesheet" href="PRODAP/owl.css">
+        <link rel="stylesheet" href="PRODAP/responsiveslides.css">
+        <!-- PERSONALIZADOS -->
+        <link rel="stylesheet" href="PRODAP/carousel.css">
+        <link rel="stylesheet" href="PRODAP/modal-youtube.css">
+        <link rel="stylesheet" href="PRODAP/jquery.css">
+
+		<link href="PRODAP/padrao.css" rel="stylesheet">
+        <link href="PRODAP/bootstrap.css" rel="stylesheet">
+        <link href="PRODAP/bootstrap-select.css" rel="stylesheet">
+        <link href="PRODAP/layout.css" rel="stylesheet">
+
+        <style>
+            #organizaIframe{
+                margin-left: -30px;
+                margin-bottom: -20px;
+            }
+            .agora{
+                margin-top: -150px;
+            }
+            #compras{
+                min-height: 800px;
+                max-height: 2300px;
+            }
+            .chamada{
+                font-size: 20px;
+                color: #0b6c9a;
+                font-family: fblack;
+                line-height: 40px;
+                margin-bottom: 10px;
+            }
+            .texto {
+                font-size: 15px;
+                color: #333;
+                font-family: fregular;
+                margin-bottom: 10px;
+                /*            #header{
+                    margin-top: -200px;
+                    opacity: 0;*/
+                }
+                
+            </style>
+            
+            <script type="text/javascript">
+				function iframeAutoHeight(){
+				
+				quem=document.getElementById('iframe')
+				
+				    if(navigator.appName.indexOf("Internet Explorer")>-1){ //ie sucks
+				        var func_temp = function(){
+				            var val_temp = quem.contentWindow.document.body.scrollHeight + 5
+				            quem.style.height = val_temp + "px";
+				        }
+				        setTimeout(function() { func_temp() },100) //ie sucks
+				    }else{
+				        var val = quem.contentWindow.document.body.parentNode.offsetHeight + 5
+				        quem.style.height= val + "px";
+				    }    
+				}
+				
+				
+				window.onload=function(){
+				var iframe=document.getElementById('organizaIframe')
+				iframe.attachEvent("onload", iframeAutoHeight)
+				iframeAutoHeight()
+				}
+				</script>
+            
+        </head>
+
+        <body class="corporate home-index" style="font-family: helvetica, arial, sans-serif !important">
+                    <!--<script> </script>-->
+            <div class="scroll-to-top" style="display: none;">
+                <a href="#" class="btn btn-primary"><i class="fa fa-chevron-circle-up fa-2x"></i></a>
+            </div>
+
+            <?php include './site_topo.php'; ?>
+
+<!--            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                    </div>
+                </div>
+            </div>-->
+
+<!--            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ul class="rslides rslides1" id="publicidade">
+                        </ul>
+                    </div>
+                </div>
+            </div>-->
+
+            <!--AQUI ENTRA AS CHAMADAS DE IFRAMES E ARQUIVO DINAMICAMENTE ################################################################-->
+            <div class="container">
+                <!--<div id="organizaIframe">-->
+                <ol class="carousel-indicators"></ol>
+                    <?php
+//QUERY STRING
+//echo $getexe;
+                switch ($getexe) {
+                    // INICIO DA AREA DO SERVIDOR #####################################################################################################
+                    case 'compras':
+                        ?>
+                        <iframe id = "compras" frameborder = "0" marginheight = "0" marginwidth = "0" scrolling = "yes" width = "100%" height = "800px" 
+                                src = "http://www.siga.ap.gov.br/sgc/faces/priv/comum/PrincipalAreaRestrita.jsp"></iframe>
+                                <?php
+                                break;
+                            case 'almoxarifado':
+                                ?>
+                        <iframe id = "frame1" frameborder = "0" marginheight = "0" marginwidth = "0" scrolling = "no" width = "100%" height = "800px" 
+                                src = "http://www.siga.ap.gov.br/sigaalmox"></iframe>
+                                <?php
+                                break;
+                            case 'patrimonio':
+                                ?>
+                        <iframe id = "frame1" frameborder = "0" marginheight = "0" marginwidth = "0" scrolling = "no" width = "1200px" height = "800px" 
+                                src = "http://www.siga.ap.gov.br/sigapatrimonio"></iframe>
+                                <?php
+                                break;
+                            case 'solicitacaoCompras':
+                                ?>
+                        <iframe id = "frame1" frameborder = "0" marginheight = "0" marginwidth = "0" scrolling = "no" width = "100%" height = "800px" 
+                                src = "http://siga.ap.gov.br/sigatr"></iframe>
+                                <?php
+                                break;
+                            // FIM DA AREA DO SERVIDOR ########################################################################################################
+                            // INICIO FORNECEDORES ###########################################################################################################
+                            case 'areaLicitante':
+                                ?>
+                        <iframe id = "frame1" frameborder = "0" marginheight = "0" marginwidth = "0" scrolling = "no" width = "100%" height = "800px" 
+                                src = "http://www.siga.ap.gov.br/sgc/faces/priv/comum/PrincipalAreaLicitante.jsp"></iframe>
+                                <?php
+                                break;
+                            case 'cadastroFornecedores':
+                                ?>
+                        <iframe id = "frame1" frameborder = "0" marginheight = "0" marginwidth = "0" scrolling = "yes" width = "1200px" height = "800px" 
+                                src = "http://www.siga.ap.gov.br/sgc/faces/pub/sgc/precadastro/UsuarioPageForm.jsp"></iframe>
+                                <?php
+                                break;
+                            case 'alterarCadastro':
+                                ?>
+                        <iframe id = "frame1" frameborder = "0" marginheight = "0" marginwidth = "0" scrolling = "no" width = "100%" height = "800px" 
+                                src = "http://www.siga.ap.gov.br/sgc/faces/priv/sgc/seguranca/UsuarioFornecedorPageForm.jsp"></iframe>
+                                <?php
+                                break;
+                            case 'consultaFornecedores':
+                                ?>
+                        <iframe id = "frame1" frameborder = "0" marginheight = "0" marginwidth = "0" scrolling = "no" width = "100%" height = "800px" 
+                                src = "http://www.siga.ap.gov.br/sgc/faces/pub/sgc/tabbasicas/FornecedoresPageList.jsp"></iframe>
+                                <?php
+                                break;
+                            case 'imprimirCRC':
+                                ?>
+                        <iframe id = "frame1" frameborder = "0" marginheight = "0" marginwidth = "0" scrolling = "no" width = "100%" height = "800px" 
+                                src = "http://www.siga.ap.gov.br/sgc/faces/pub/sgc/tabbasicas/ImpressaoCertificadoCadastralPageForm.jsp"></iframe>
+                                <?php
+                                break;
+                            case 'alterarSenha':
+                                ?>
+                        <iframe id = "frame1" frameborder = "0" marginheight = "0" marginwidth = "0" scrolling = "no" width = "100%" height = "800px" 
+                                src = "http://www.siga.ap.gov.br/sgc/faces/pub/seguranca/UsuarioLicitanteRecuperarSenhaPageForm.jsp"></iframe>
+                                <?php
+                                break;
+                            case 'manuaisFornecedores':
+                                ?>
+                        <iframe id = "frame1" frameborder = "0" marginheight = "0" marginwidth = "0" scrolling = "no" width = "100%" height = "800px" 
+                                src = "http://compras.ap.gov.br/manuais.rar"></iframe>
+                                <?php
+                                break;
+                            case 'documentosNecessarios':
+                                ?>
+                        <iframe id = "frame1" frameborder = "0" marginheight = "0" marginwidth = "0" scrolling = "no" width = "100%" height = "800px" 
+                                src = "http://compras.ap.gov.br/docs.rar"></iframe>
+                                <?php
+                                break;
+                            case 'videoAulaSIGA':
+                                ?>
+                        <iframe id = "frame1" frameborder = "0" marginheight = "0" marginwidth = "0" scrolling = "no" width = "100%" height = "800px" 
+                                src = "https://prodap.ap.gov.br/video.php#5769"></iframe>
+                                <?php
+                                break;
+                            case 'DOEcomDecreto':
+                                ?>
+                        <iframe id = "frame1" frameborder = "0" marginheight = "0" marginwidth = "0" scrolling = "no" width = "100%" height = "800px" 
+                                src = "http://compras.ap.gov.br/dec1.pdf"></iframe>
+                                <?php
+                                break;
+                            // FIM DA AREA DO SERVIDOR ########################################################################################################
+                            // INICIO LICITAÇÃO #####################################################################################################
+                            case 'licitacoesVigentes':
+                                ?>
+                        <iframe id = "frame1" frameborder = "0" marginheight = "0" marginwidth = "0" scrolling = "no" width = "100%" height = "800px" 
+                                src = "http://www.siga.ap.gov.br/sgc/faces/pub/sgc/central/EditalPageList.jsp"></iframe>
+                                <?php
+                                break;
+                            case 'licitacoesEncerradas':
+                                ?>
+                        <iframe id = "frame1" frameborder = "0" marginheight = "0" marginwidth = "0" scrolling = "no" width = "100%" height = "800px" 
+                                src = "http://compras.ap.gov.br/outros.php"></iframe>
+                                <?php
+                                break;
+                            case 'compraDireta':
+                                ?>
+                        <iframe id = "frame1" frameborder = "0" marginheight = "0" marginwidth = "0" scrolling = "no" width = "100%" height = "800px" 
+                                src = "http://www.siga.ap.gov.br/sgc/faces/pub/sgc/cdiretas/PropostaFornecedorCDConsultaPageList.jsp"></iframe>
+                                <?php
+                                break;
+                            case 'pregoesAndamento':
+                                ?>
+                        <iframe id = "frame1" frameborder = "0" marginheight = "0" marginwidth = "0" scrolling = "no" width = "100%" height = "800px" 
+                                src = "http://www.siga.ap.gov.br/sgc/faces/pub/sgc/pregao/AssistirPageList.jsp"></iframe>
+                                <?php
+                                break;
+                            case 'pregoesFuturos':
+                                ?>
+                        <iframe id = "frame1" frameborder = "0" marginheight = "0" marginwidth = "0" scrolling = "no" width = "100%" height = "800px" 
+                                src = "http://www.siga.ap.gov.br/sgc/faces/pub/sgc/pregao/FuturosPageList.jsp"></iframe>
+                                <?php
+                                break;
+                            case 'pregoesEncerrados':
+                                ?>
+                        <iframe id = "frame1" frameborder = "0" marginheight = "0" marginwidth = "0" scrolling = "no" width = "100%" height = "800px" 
+                                src = "http://www.siga.ap.gov.br/sgc/faces/pub/sgc/pregao/PregaoResultadosPageList.jsp"></iframe>
+                                <?php
+                                break;
+                            case 'pregoesSuspensos':
+                                ?>
+                        <iframe id = "frame1" frameborder = "0" marginheight = "0" marginwidth = "0" scrolling = "no" width = "100%" height = "800px" 
+                                src = "http://www.siga.ap.gov.br/sgc/faces/pub/sgc/pregao/SuspensosPageList.jsp"></iframe>
+                                <?php
+                                break;
+                            case 'avisosLicitacao':
+                                ?>
+                        <iframe id = "frame1" frameborder = "0" marginheight = "0" marginwidth = "0" scrolling = "no" width = "100%" height = "800px" 
+                                src = "http://www.siga.ap.gov.br/sgc/faces/pub/sgc/central/EditalPageList.jsp"></iframe>
+                                <?php
+                                break;
+                            case 'resultadosLicitacao':
+                                ?>
+                        <iframe id = "frame1" frameborder = "0" marginheight = "0" marginwidth = "0" scrolling = "yes" width = "100%" height = "800px" 
+                                src = "http://www.siga.ap.gov.br/sgc/faces/pub/sgc/central/ResultadosPageList.jsp"></iframe>
+                                <?php
+                                break;
+                            // FIM DA AREA DO SERVIDOR ########################################################################################################
+                            // INICIO DA AREA SEM SUBLINKS ########################################################################################################
+                            case 'registroPreco':
+                                ?>
+
+                        <iframe id = "frame1" frameborder = "0" marginheight = "0" marginwidth = "0" scrolling = "no" width = "100%" height = "800px" 
+                                src = "http://www.siga.ap.gov.br/sgc/faces/pub/sgc/regpreco/RegistroPrecoPageList.jsp"></iframe>
+                                <?php
+                                break;
+                            case 'ItemCompraPageList':
+                                ?>
+
+                        <iframe id = "frame1" frameborder = "0" marginheight = "0" marginwidth = "0" scrolling = "no" width = "100%" height = "800px" 
+                                src = "http://www.siga.ap.gov.br/sgc/faces/pub/sgc/central/ItemCompraPageList.jsp"></iframe>
+                                <?php
+                                break;
+
+                            // FIM DA AREA SEM SUBLINKS ########################################################################################################
+
+                            default:
+                                if (!empty($getexe)):
+                                    $includepatch = __DIR__ . DIRECTORY_SEPARATOR . 'paginas' . DIRECTORY_SEPARATOR . strip_tags(trim($getexe) . '.php');
+//                $includepatch = __DIR__ . '\\system\\' . strip_tags(trim($getexe) . '.php');
+                                else:
+                                    $includepatch = __DIR__ . DIRECTORY_SEPARATOR . 'principal.php';
+//                                    $includepatch = __DIR__ . DIRECTORY_SEPARATOR . 'paginas' . DIRECTORY_SEPARATOR . 'principal.php';
+//                $includepatch = __DIR__ . '\\system\\home.php';
+                                endif;
+                                if (file_exists($includepatch)):
+                                    require_once($includepatch);
+                                else:
+                                    echo "<div class=\"content notfound\">";
+                                    WSErro("<b>Erro ao incluir tela:</b> Erro ao incluir o controller /{$getexe}.php!", WS_ERROR);
+                                    echo "</div>";
+                                endif;
+                                break;
+                        }
+                        ?>
+                <!--</div>-->
+
+
+
+                <!--FIM DA CHAMADA ###########################################################################################################-->
+
+                <div class="container">
+                		
+                    <iframe id = "organizaIframe" frameborder = "0" marginheight = "0" marginwidth = "0" scrolling = "no" width = "1200px" height = "1000px" src = "http://www2.compras.ap.gov.br/quadro_clc.php"></iframe>
+
+                </div>
+
+                <!-- INICIO MAPA -->
+                <div class="container" id="mapa">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div id="titulos">COMO CHEGAR</div><div class="block_titulo"></div><div class="block_titulo_linha"></div>
+                             <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.8172815173184!2d-51.05350438470885!3d0.041345899969839485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8d61e0e107b6a6e3%3A0xa3bffd23b7f8d243!2sPRODAP!5e0!3m2!1spt-BR!2sus!4v1484311849832" style="border:0" allowfullscreen="" width="100%" height="200" frameborder="0"></iframe>-->
+                            <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script><div style='overflow:hidden;height:200px;width:1140px;'><div id='gmap_canvas' style='height:200px;width:1140px;'></div>
+                                <div><small><a href="http://embedgooglemaps.com">embed google map</a></small></div><div><small><a href="http://proxysitereviews.com/">proxy sites</a></small></div>
+                                <style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><script type='text/javascript'>function init_map() {
+                                        var myOptions = {zoom: 16, center: new google.maps.LatLng(0.0317906, -51.05478979999998), mapTypeId: google.maps.MapTypeId.ROADMAP};
+                                        map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+                                        marker = new google.maps.Marker({map: map, position: new google.maps.LatLng(0.0317906, -51.05478979999998)});
+                                        infowindow = new google.maps.InfoWindow({content: '<strong> Procuradoria do Estado do Amapá</strong><br>PGE, Macapá<br>'});
+                                        google.maps.event.addListener(marker, 'click', function () {
+                                            infowindow.open(map, marker);
+                                        });
+                                        infowindow.open(map, marker);
+                                    }
+                                    google.maps.event.addDomListener(window, 'load', init_map);</script>
+                        </div>
+                    </div>
+                </div>
+                <!-- FIM MAPA -->
+
+                <!-- ##################################################################################################### -->
+                <!-- CONTEÚDO ANTES DAQUI -->
+
+                <!-- INICIO LINKS UTEIS-->
+
+                <div class="container" id="links-rodape">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div id="titulos">LINKS ÚTEIS</div>
+                            <div class="block_titulo"></div>
+                            <div class="block_titulo_linha"></div>
+                            <div class="owl-carousel owl-theme">
+                                <?php
+                                $linksUteis = new Read;
+                                $linksUteis->ExeRead("mtxslide", "WHERE  sl_status = 1 ORDER BY sl_nome");
+                                foreach ($linksUteis->getResult() as $sl) {
+                                    ?>
+                                    <a href="<?php echo $sl['sl_link'] ?>" target="_blank">
+                                        <div class="thumbnail">
+                                            <i class="fa <?php echo $sl['sl_icone'] ?> fa-3x" aria-hidden="true"></i>
+                                            <div class="caption">
+                                                <h4><?php echo $sl['sl_nome'] ?></h4>
+                                                <p><?php echo $sl['sl_desc'] ?></p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                <?php } ?>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- fim do container-->
+
+            <!-- FIM LINKS UTEIS-->
+        </div><!--Fecha o container para deixar rodape com tamanho total da pagina-->
+        <!-- INICIO RODAPE UM -->
+        <div class="container fortaleza"></div>
+        <div class="container-fluid" id="rodape_um">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="titulos"><i class="fa fa-child" aria-hidden="true"></i> CIDADÃO</div>
+                        <ul class="list-unstyled">
+                            <li><a href="http://www.caesa.ap.gov.br/areaServ.php" target="_blank">2ª via da Conta de Água</a></li>
+                            <li><a href="http://2viasimplificada.cea.ap.gov.br:8081/" target="_blank">2ª via da Conta de Energia</a></li>
+                            <li><a href="http://www.policiacivil.ap.gov.br/index.php?option=com_ckforms&amp;view=ckforms&amp;id=4&amp;Itemid=100" target="_blank">Boletim de Ocorrência Online</a></li>
+                            <li><a href="http://sead.ap.gov.br/lconcursos.php" target="_blank">Concursos</a></li>
+                            <li><a href="http://detranamapa.com.br/site/apps/veiculo/consultas/filtro-consulta-veiculo-htm.jsp" target="_blank">Consulta de Veículos</a></li>
+                            <li><a href="http://detranamapa.com.br/site/apps/habilitacao/consulta/filtro-consulta-habilitacao-htm.jsp" target="_blank">Consultar Habilitação</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="titulos"><i class="fa fa-industry" aria-hidden="true"></i> EMPRESAS</div>
+                        <ul class="list-unstyled">
+                            <li><a href="http://www.siga.ap.gov.br/sgc/faces/pub/sgc/precadastro/UsuarioPageForm.jsp" target="_blank">Cadastro de Fornecedores</a></li>
+                            <li><a href="http://www.sefaz.ap.gov.br/sate/seg/SEGf_AcessarFuncao.jsp?cdFuncao=DIA_060" target="_blank">Certidão Negativa</a></li>
+                            <li><a href="http://sefaz.ap.gov.br/sate/seg/SEGf_AcessarFuncao.jsp?cdFuncao=ARR_305" target="_blank">DAR Avulso</a></li>
+                            <li><a href="http://www.compras.ap.gov.br/" target="_blank">Licitações do Estado</a></li>
+                            <li><a href="http://www.sefaz.ap.gov.br/index.php/nota-fiscal-do-consumidor-eletronica" target="_blank">Nota Fiscal Eletrônica</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="titulos"><i class="fa fa-users" aria-hidden="true"></i> SERVIDORES</div>
+                        <ul class="list-unstyled">
+                            <li><a href="http://www.agendadoservidor.ap.gov.br/" target="_blank">Agenda do Servidor</a></li>
+                            <li><a href="http://www.competencias.ap.gov.br/" target="_blank">Banco de Conhecimento</a></li>
+                            <li><a href="http://www.eap.ap.gov.br/" target="_blank">Catálogo de Cursos</a></li>
+                            <li><a href="http://www.consig.ap.gov.br/autenticacao.php" target="_blank">Consignataria On line</a></li>
+                            <li><a href="http://www.folhagea.ap.gov.br/" target="_blank">Contracheque</a></li>
+                            <li><a href="https://sso.gestaodeacesso.planejamento.gov.br/cassso/login?service=https%3A%2F%2Fservidor.sigepe.planejamento.gov.br%2FSIGEPE-PortalServidor%2Fprivate%2Finicio.jsf%3Bjsessionid%3DD2U0u%2BygR3NSocx1foq6L7EL" target="_blank">Serviços do Servidor Federal</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="titulos"><i class="fa fa-thumbs-up" aria-hidden="true"></i> REDES SOCIAIS DO GEA</div>
+                        <ul class="list-unstyled">
+                            <li><a href="http://www.facebook.com/governo.ap" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></li>
+                            <li><a href="" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></li>
+                            <li><a href="https://www.instagram.com/governoamapa/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+                            <li><a href="http://www.youtube.com/user/GovernodoAmapa" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i> Youtube</a></li>
+                            <li><a href="http://www.flickr.com/photos/governoamapa" target="_blank"><i class="fa fa-flickr" aria-hidden="true"></i> Flickr</a></li>
+                            <a href="http://webmail.amapa.gov.br/" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i> Webmail GOV</a>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- FIM RODAPE UM -->
+
+        <!-- INICIO RODAPE DOIS-->
+        <div class="container-fluid" id="rodape_dois">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="pull-left">
+                            <strong>CLC - Central de Licitações e Contratos</strong><br>
+                            Av. Antonio Coelho de Carvalho nº 396, Macapá - AP -
+                            <i class="fa fa-phone" aria-hidden="true"></i> (96) 3131-2840 - <i class="fa fa-envelope-o" aria-hidden="true"></i> clc.coordgeral@pge.ap.gov.br<br>
+                            Site desenvolvido e hospedado pelo <a href="http://www.prodap.ap.gov.br/" target="_blank">PRODAP - Centro de Gestão da Tecnologia da Informação</a><br>
+                            2017 - 2017 Licença Creative Commons 3.0 International
+                        </div>
+                        <div class="pull-right hidden-xs">
+                            <img src="PRODAP/brasao.png" alt="Amapá">
+                        </div>
+                        <div class="visible-xs text-center">
+                            <img src="PRODAP/brasao.png" alt="Amapá">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FIM RODAPE DOIS-->
+
+
+        <script src="PRODAP/jquery_003.js"></script>
+        <script src="PRODAP/bootstrap.js"></script>
+        <script src="PRODAP/jquery_002.js" type="text/javascript"></script>
+        <script src="PRODAP/bootstrap-select.js"></script>
+        <script src="PRODAP/less-1.js"></script>
+        <script src="PRODAP/PageSlide-script.js"></script>
+        <script src="PRODAP/tipped.js"></script>
+        <script src="PRODAP/YouTubePopUp.js"></script>
+        <script src="PRODAP/jquery.js" type="text/javascript"></script>
+        <script src="PRODAP/responsiveslides.js" type="text/javascript"></script>
+        <script src="PRODAP/jquery_004.js" type="text/javascript"></script>
+
+        <script>
+                                $(function () {
+                                    $("#publicidade").responsiveSlides({
+                                        speed: 800
+                                    });
+                                });
+        </script>
+        <script>
+            $('#avisoModal').modal('show');
+        </script>
+        <script type="text/javascript">
+            $(function () {
+                $('#new_celular').mask('(00)00000-0000', {clearIfNotMatch: true});
+            });
+        </script>
+        <script type="text/javascript">
+            jQuery(function () {
+                jQuery("a.vd-1").YouTubePopUp();
+            });
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                Tipped.create('.simple-tooltip');
+            });
+        </script>
+
+        <!-- PERSONALIZADOS -->
+        <script src="PRODAP/owl.js"></script>
+        <script src="PRODAP/owl-scripts.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#myCarousel").swiperight(function () {
+                    $(this).carousel('prev');
+                });
+                $("#myCarousel").swipeleft(function () {
+                    $(this).carousel('next');
+                });
+            });
+
+            $('#noticias img').replaceWith(function (i, v) {
+                return $('<div/>', {
+                    style: 'background-image: url(' + this.src + ');' +
+                            'width:' + this.width + 'px;' +
+                            'height:' + this.height + 'px;',
+                    class: 'fakeImg'
+                })
+            })
+        </script>
+
+    </body>
+</html>
